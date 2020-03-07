@@ -3,21 +3,33 @@ base: core18
 confinement: strict 
 grade: devel
 summary: Test
-version: "2"
+version: "1"
 description: |
       Test.
 
 apps:
   s1:
     command: bin/s1.sh
-  rest1:
-    command: bin/rest1.sh
+    daemon: simple
+  list:
+    command: bin/rest.sh list
     plugs: [ snapd-control ]
-
+  stop-s1:
+    command: bin/rest.sh stop-s1
+    plugs: [ snapd-control ]
+  start-s1:
+    command: bin/rest.sh start-s1
+    plugs: [ snapd-control ]
+  stop-extern:
+    command: bin/rest.sh stop-extern
+    plugs: [ snapd-control ]
+  start-extern:
+    command: bin/rest.sh start-extern
+    plugs: [ snapd-control ]
 parts:
-  rest1:
+  rest:
     plugin: nodejs
-    source: rest1
+    source: rest
     nodejs-version: "10.16.3"
     nodejs-package-manager: "npm"
     #stage: [ -package ]

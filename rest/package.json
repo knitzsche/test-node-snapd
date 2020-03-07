@@ -1,5 +1,5 @@
 {
-  "name": "rest1",
+  "name": "test-node-snapd",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
