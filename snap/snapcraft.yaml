@@ -1,0 +1,26 @@
+name: test-node-snapd
+base: core18
+confinement: strict 
+grade: devel
+summary: Test
+version: "2"
+description: |
+      Test.
+
+apps:
+  s1:
+    command: bin/s1.sh
+  rest1:
+    command: bin/rest1.sh
+    plugs: [ snapd-control ]
+
+parts:
+  rest1:
+    plugin: nodejs
+    source: rest1
+    nodejs-version: "10.16.3"
+    nodejs-package-manager: "npm"
+    #stage: [ -package ]
+  launchers:
+    plugin: dump
+    source: launchers

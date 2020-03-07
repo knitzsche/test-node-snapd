@@ -1,0 +1,9 @@
+{
+  "name": "rest1",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "node-snapd": "git+https://github.com/k4connect/node-snapd.git#1.0.1-k4"
+  }
+}
+
