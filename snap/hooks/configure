@@ -1,0 +1,5 @@
+#!/bin/bash
+systemid=`snapctl get systemid`
+
+echo "systemid: $systemid" >> $SNAP_DATA/config-log
+
